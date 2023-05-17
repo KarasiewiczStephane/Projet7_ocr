@@ -2,3 +2,9 @@ flask
 numpy
 pandas
 scikit-learn
+dash
+plotly
+dash_html_components
+dash_core_components
+requests
+dash_bootstrap_components

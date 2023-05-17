@@ -347,6 +347,8 @@ def main(debug = False):
         cc = credit_card_balance(num_rows)
         print("Credit card balance df shape:", cc.shape)
         df = df.join(cc, how='left', on='SK_ID_CURR')
+        df=df[df.columns[df.isna().sum()/df.shape[0]<0.50]]
+        df.dropna(axis=0,how='all', inplace=True)
         df.to_csv('df_clean.csv')
         del cc
         gc.collect()
