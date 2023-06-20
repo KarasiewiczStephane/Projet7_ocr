@@ -2,8 +2,7 @@ from flask import Flask
 import pandas as pd
 from random import uniform
 
-df = pd.read_csv("../df_clean.csv")
-df_sample = df.sample(50)
+df = pd.read_csv("../data_trim_sample.csv")
 df = df.set_index("SK_ID_CURR") 
 
 app = Flask(__name__)
@@ -14,11 +13,11 @@ def hello_world():
 
 @app.route("/df")
 def dataframe():
-    return df_sample.to_dict()
+    return df.to_dict()
 
 @app.route("/get_ID_client")
 def get_ID_client():
-    return list(df_sample["SK_ID_CURR"])
+    return list(df["SK_ID_CURR"])
 
 @app.route("/get_info_client/<id_client>")
 def get_info_client(id_client):
