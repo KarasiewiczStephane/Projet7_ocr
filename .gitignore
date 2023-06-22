@@ -1,5 +1,14 @@
-*.csv
 *.pptx
 prjet 7.txt
+shortcut.txt
+code secur ovh.txt
+models/
+mlruns/
+venv/
+input/
+'note méthodologique.docx'
+data_trim.csv
+data_trim.zip
+df_clean.csv
+ubuntu@146.49.157.80
 .ipynb_checkpoints
-venv
